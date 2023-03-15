@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="w-full lg:w-10/12 mx-auto">
+      <body className="w-11/12 pb-10 lg:w-10/12 mx-auto">
         <Header />
         <Banner />
         {children}

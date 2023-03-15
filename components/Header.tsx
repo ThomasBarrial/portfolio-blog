@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between space-x-2  py-5 px-10">
+    <header className="flex items-center justify-between space-x-2  py-5 ">
       <div className="flex items-center justify-between space-x-2 ">
         <Link href="/">
           <Image

@@ -17,6 +17,8 @@ const query = groq`
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
+export const revalidate = 30;
+
 type AppPreviewData = { token: string };
 
 export default async function HomePage() {
