@@ -2,6 +2,14 @@
 module.exports = {
   reactStrictMode: true,
   experimental: {
-    appDir: true
-  }
-}
+    appDir: true,
+  },
+  images: {
+    domains: [
+      'www.canva.com',
+      'as1.ftcdn.net',
+      'media.istockphoto.com',
+      'cdn.sanity.io',
+    ],
+  },
+};

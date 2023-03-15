@@ -1274,6 +1274,11 @@
   dependencies:
     "@floating-ui/dom" "^1.1.0"
 
+"@heroicons/react@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.16.tgz#562883c19ba2690c83380b42a9a5cce39dcbdb4a"
+  integrity sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz#e5d2e450306a9491e3bd77e323e38d7aff315996"
@@ -1681,7 +1686,12 @@
     split2 "^4.1.0"
     throttle-debounce "^5.0.0"
 
-"@sanity/icons@^2.1.0", "@sanity/icons@^2.2.2":
+"@sanity/icons@^1.3":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-1.3.10.tgz#df934a94ae6669fe6b15515d800afb221cba0498"
+  integrity sha512-5wVG/vIiGuGrSmq+Bl3PY7XDgQrGv0fyHdJI64FSulnr2wH3NMqZ6C59UFxnrZ93sr7kOt0zQFoNv2lkPBi0Cg==
+
+"@sanity/icons@^2.0.0", "@sanity/icons@^2.1.0", "@sanity/icons@^2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-2.2.2.tgz#678386dcd07ac481e456afd07f29be3c86c54c15"
   integrity sha512-+Ks6LeYe44kjZSfcWFWj0zQRP48N3JisrZ9ia44QwG11y6bO9Wk8bfhu5o23FkyYrREu9CzQ0U+slSV7YsvcuQ==
@@ -1714,6 +1724,14 @@
     rimraf "^3.0.2"
     split2 "^3.2.2"
     tar-fs "^2.1.1"
+
+"@sanity/incompatible-plugin@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.4.tgz#c369af3b629de6c01e5843373fb3ede9972a53f4"
+  integrity sha512-2z39G9PTM8MXOF4fJNx3TG4tH0RrTjtH6dVLW93DSjCPbIS7FgCY5yWjZfQ+HVkwhLsF7ATDAGLA/jp65pFjAg==
+  dependencies:
+    "@sanity/icons" "^1.3"
+    react-copy-to-clipboard "^5.1.0"
 
 "@sanity/logos@^2.0.2":
   version "2.1.2"
@@ -1791,7 +1809,7 @@
     "@sanity/client" "^5.2.0"
     "@types/react" "^18.0.25"
 
-"@sanity/ui@^1.2.0":
+"@sanity/ui@^1.0.0", "@sanity/ui@^1.2.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-1.3.0.tgz#e17d48c3f5dd9aab4d2f480692d5d4c1615009f1"
   integrity sha512-70ciBIxBW2Fp7nsCBK9Ahqv9djLjErl//G40zSR+Gqqeu+W80dlZ5HY/h2yRlKtFVTwuFEH86eUIe5q1PCSzDw==
@@ -1868,6 +1886,11 @@
   integrity sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==
   dependencies:
     tslib "^2.4.0"
+
+"@tailwindcss/line-clamp@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.2.tgz#f353c5a8ab2c939c6267ac5b907f012e5ee130f9"
+  integrity sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==
 
 "@tanstack/react-virtual@3.0.0-beta.29":
   version "3.0.0-beta.29"
@@ -4989,6 +5012,11 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha512-ESF23V4SKG6lVSGZgYNpbsiaAkdab6ZgOxe52p7+Kid3W3u3bxR4Vfd/o21dmN7jSt0IwgZ4v5MUd26FEtXE9w==
 
+prettier@2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.4.tgz#34dd2595629bfbb79d344ac4a91ff948694463c3"
+  integrity sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==
+
 pretty-ms@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-7.0.1.tgz#7d903eaab281f7d8e03c66f867e239dc32fb73e8"
@@ -5099,7 +5127,7 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-react-copy-to-clipboard@^5.0.4:
+react-copy-to-clipboard@^5.0.4, react-copy-to-clipboard@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.1.0.tgz#09aae5ec4c62750ccb2e6421a58725eabc41255c"
   integrity sha512-k61RsNgAayIJNoy9yDsYzDe/yAZAzEbEgcz3DZMhF686LEyukcE1hzurxe85JandPUG+yTfGVFzuEw3xt8WP/A==
@@ -5440,6 +5468,16 @@ sanity-diff-patch@^1.0.9:
   integrity sha512-J5YeuM/S7rLTp51iqUunwzz7Rf68K/jCDGKtNCj6Wzcfgf9CH+0GtPlvf2DFsg0QQhYYZ72FOVn6skmoLjMCdw==
   dependencies:
     diff-match-patch "^1.0.5"
+
+sanity-plugin-iframe-pane@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-iframe-pane/-/sanity-plugin-iframe-pane-2.2.0.tgz#a5e88f786a3b62d102902b48b3ebe7310307f02b"
+  integrity sha512-m55cnkKIjUqOM/s8xJMaZ6JF7lDiLhqXMHHK5uo0rO2/0+HlGLAtHDxdkZBK2kU7KQfjycG4nOYWorzZNPIlUw==
+  dependencies:
+    "@sanity/icons" "^2.0.0"
+    "@sanity/incompatible-plugin" "^1.0.4"
+    "@sanity/ui" "^1.0.0"
+    usehooks-ts "^2.6.0"
 
 sanity@^3.0.0:
   version "3.6.0"
@@ -6189,6 +6227,11 @@ use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+
+usehooks-ts@^2.6.0:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.9.1.tgz#953d3284851ffd097432379e271ce046a8180b37"
+  integrity sha512-2FAuSIGHlY+apM9FVlj8/oNhd+1y+Uwv5QNkMQz1oSfdHk4PXo1qoCw9I5M7j0vpH8CSWFJwXbVPeYDjLCx9PA==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
