@@ -11,12 +11,10 @@ type Props = {
 
 function BlogList({ posts }: Props) {
   return (
-    <div>
-      <hr className="border-purple-800 mb-10" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
-        {/* Posts */}
-
+    <div className="font-montserrat font-black w-10/12 bg-blue-600 h-[80rem] mx-auto">
+      Hello
+      {/* <hr className="border-purple-800 mb-10" /> */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
             <div className="group flex flex-col cursor-pointer">
@@ -64,7 +62,7 @@ function BlogList({ posts }: Props) {
             </div>
           </ClientSideRoute>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

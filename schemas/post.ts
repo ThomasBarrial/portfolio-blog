@@ -39,6 +39,12 @@ export default defineType({
       },
     }),
     defineField({
+      type: 'string',
+      name: 'url',
+      title: 'Video URL',
+      description: 'A URL to a vimeo or youtube video',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',

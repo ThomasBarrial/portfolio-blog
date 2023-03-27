@@ -1,4 +1,4 @@
-import { Reference } from "sanity";
+import { Reference } from 'sanity';
 
 type Base = {
   _createdAt: string;
@@ -15,6 +15,7 @@ interface Post extends Base {
   mainImage: string;
   slug: Slug;
   title: string;
+  url: string;
   description: string;
 }
 
@@ -26,31 +27,31 @@ interface Author extends Base {
 }
 
 interface Image {
-  _type: "image";
+  _type: 'image';
   asset: Reference;
 }
 
 interface Reference {
   _ref: string;
-  _type: "reference";
+  _type: 'reference';
 }
 
 interface Slug {
-  _type: "slug";
+  _type: 'slug';
   current: string;
 }
 
 interface Block {
   _key: string;
-  _type: "block";
+  _type: 'block';
   children: Span[];
   markDefs: any[];
-  style: "normal" | "h1" | "h2" | "h3" | "h4" | "bloclquote";
+  style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'bloclquote';
 }
 
 interface Span {
   _key: string;
-  _type: "span";
+  _type: 'span';
   marks: string[];
   text: string;
 }

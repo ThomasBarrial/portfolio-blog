@@ -12,8 +12,8 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET as string;
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'PAPAFMA_Content_Studio',
-  title: 'PAPAFAM Content studio',
+  name: 'BLOG_Content_Studio',
+  title: 'BLOG Content studio',
   projectId,
   dataset,
   plugins: [
