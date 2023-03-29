@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import SlideDown from './animated/SlideDown';
 import SlideUp from './animated/SlideUp';
+import ClientSideRoute from './ClientSideRoute';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ function Header() {
   const pagesLink = [
     {
       name: 'Acceuil',
-      route: '',
+      route: '/',
     },
     {
       name: 'Youtube',
@@ -32,12 +33,14 @@ function Header() {
 
   return (
     <header
-      className={`py-5 px-10 bg-gradient-to-b from-[#1B1B1B] fixed top-0  font-montserrat overflow-x-hidden  w-screen z-50`}
+      className={`py-5  px-5 lg:px-10 bg-gradient-to-b from-[#1B1B1B] fixed top-0  font-benchnine text-xl overflow-x-hidden  w-screen z-50`}
     >
-      <div className="flex  mx-auto items-center justify-between">
-        <SlideDown delay={1} duration={2}>
-          <button className="font-black text-lg">RAKONTO</button>
-        </SlideDown>
+      <div className="flex mx-auto items-center justify-between">
+        <ClientSideRoute route={`/`}>
+          <SlideDown delay={1} duration={2}>
+            <button className="font-black text-2xl">RAKONTO</button>
+          </SlideDown>
+        </ClientSideRoute>
         {/* DESKTOP COMPONENT  */}
 
         <div className="hidden  lg:flex flex-row space-x-10">

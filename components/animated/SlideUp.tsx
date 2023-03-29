@@ -8,6 +8,7 @@ interface IProps {
   scaleInit?: number;
   scaleFinish?: number;
   delay?: number;
+  style?: Object;
 }
 
 function SlideUp({
@@ -17,6 +18,7 @@ function SlideUp({
   scaleFinish = 1,
   scaleInit = 1,
   delay = 0,
+  style = {},
 }: IProps): JSX.Element {
   const variants = {
     open: {
@@ -35,6 +37,7 @@ function SlideUp({
       <motion.div
         className={className}
         variants={variants}
+        style={style}
         initial="closed"
         animate="open"
       >

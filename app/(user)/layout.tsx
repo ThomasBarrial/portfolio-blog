@@ -1,9 +1,7 @@
 import Header from '../../components/Header';
 import '../../styles/globals.css';
 
-import { Montserrat, Poppins, BenchNine } from 'next/font/google';
-import GetScrollPosition from '../../components/animated/GetScrollPosition';
-import Component from '../../components/Component';
+import { Montserrat, Poppins, BenchNine, Bebas_Neue } from 'next/font/google';
 
 export const metadata = {
   title: 'Next.js',
@@ -13,6 +11,12 @@ export const metadata = {
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-bebasNeue',
 });
 
 const poppins = Poppins({
@@ -34,7 +38,7 @@ export default function RootLayout({
   return (
     <html className="w-screen overflow-x-hidden" lang="en">
       <body
-        className={`bg-[#1B1B1B]  text-white w-screen   ${montserrat.variable} ${poppins.variable} ${benchnine.variable}`}
+        className={`bg-[#1B1B1B]  text-white w-screen   ${montserrat.variable} ${poppins.variable} ${benchnine.variable} ${bebasNeue.variable}`}
       >
         <Header />
         {children}

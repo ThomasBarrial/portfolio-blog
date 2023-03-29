@@ -38,16 +38,11 @@ function HomeBanner() {
     },
   };
 
-  // scrollYProgress.onChange(() => {
-  //   console.log(scrollYProgress.get());
-  // });
-
-  // console.log(scale);
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen max-w-[90rem] mx-auto">
       {/* <motion.div className="h-10 w-full absolute z-20 top-72 bg-red-400" /> */}
       <div
-        className={`flex items-center justify-center overflow-hidden w-full  lg:w-6/12 mx-auto  h-[50%] lg:mt-24`}
+        className={`flex items-center justify-center overflow-hidden w-full  lg:w-8/12 mx-auto  h-[50%] lg:mt-24`}
       >
         <motion.div
           animate={{
@@ -68,7 +63,7 @@ function HomeBanner() {
         </motion.div>
       </div>
 
-      <div className="font-montserrat overflow-hidden h-96 flex items-end justify-center z-10  text-6xl md:text-7xl xl:text-9xl w-10/12 md:w-full mx-auto font-black -translate-y-80 lg:-translate-y-80  text-center">
+      <div className="font-montserrat overflow-hidden h-96 flex items-end justify-center z-10  text-6xl md:text-9xl  w-full mx-auto font-black -translate-y-80 lg:-translate-y- text-center">
         <motion.div
           variants={variants}
           initial="closed"
@@ -79,7 +74,7 @@ function HomeBanner() {
         </motion.div>
       </div>
 
-      <div className="-translate-y-[37rem]  h-96 justify-end overflow-hidden lg:translate-y-20 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 w-11/12 text-2xl font-benchnine font-bold flex flex-col items-center lg:flex-row lg:justify-between mx-auto">
+      <div className="-translate-y-[37rem]  h-96 justify-end overflow-hidden lg:translate-y-20 lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 w-11/12  max-w-[90rem] text-2xl font-benchnine font-bold flex flex-col items-center lg:flex-row lg:justify-between mx-auto">
         <motion.div
           className="text-center lg:text-left"
           variants={variants}
@@ -106,7 +101,7 @@ function HomeBanner() {
         animate="open"
         initial="closed"
         style={{ y: y2, x: '-50%' }}
-        className="group absolute border border-white px-5 py-8 rounded-full bottom-[5%] lg:bottom-[20%] left-1/2"
+        className="group absolute border border-white px-5 py-8 rounded-full bottom-[5%] lg:bottom-[10%] left-1/2"
       >
         <SlideDown duration={3}>
           <Image src={downArrow} alt="down" />

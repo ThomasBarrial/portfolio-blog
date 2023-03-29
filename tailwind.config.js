@@ -13,10 +13,12 @@ module.exports = {
       montserrat: ['var(--font-montserrat)'],
       poppins: ['var(--font-poppins)'],
       benchnine: ['var(--font-benchnine)'],
+      bebasNeue: ['var(--font-bebasNeue)'],
     },
     animation: {
       infinitTextLine: 'marquee 50s linear infinite',
       infinitTextLineReverse: 'marquee 30s linear infinite',
+      fadeIn: 'fadeIn ease-in-out 2s',
     },
     keyframes: {
       marquee: {
@@ -26,6 +28,10 @@ module.exports = {
         '100%': {
           transform: 'translate3d(-50%, 0, 0)',
         },
+      },
+      fadeIn: {
+        '0%': { opacity: 0 },
+        '100%': { opacity: 1 },
       },
       reverse: {
         '0%': {

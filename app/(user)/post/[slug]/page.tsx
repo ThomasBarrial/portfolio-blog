@@ -1,10 +1,11 @@
 import { groq } from 'next-sanity';
-import Image from 'next/image';
+
 import { client } from '../../../../lib/sanity.client';
-import urlFor from '../../../../lib/urlFor';
+
 import { Post } from '../../../../typings';
 import { PortableText } from '@portabletext/react';
 import RichTextComponents from '../../../../components/RichTextComponents';
+import Header from '../../../../components/post/Header';
 
 type Props = {
   params: {
@@ -43,7 +44,8 @@ async function OnePost({ params: { slug } }: Props) {
 
   return (
     <article>
-      <section className="sapce-y-2 border border-purple-800 text-white">
+      <Header post={post} />
+      {/* <section className="sapce-y-2 border border-purple-800 text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-20 blur-sm p-10">
             <Image
@@ -77,7 +79,7 @@ async function OnePost({ params: { slug } }: Props) {
 
                 <div className="w-64">
                   <h3 className="text-lg font-bold">{post.author.name}</h3>
-                  <div>{/*  */}</div>
+                  
                 </div>
               </div>
             </div>
@@ -97,9 +99,9 @@ async function OnePost({ params: { slug } }: Props) {
             </div>
           </section>
         </div>
-      </section>
-
-      <PortableText value={post.body} components={RichTextComponents} />
+      </section> */}
+      Hello
+      {/* <PortableText value={post.body} components={RichTextComponents} /> */}
     </article>
   );
 }
