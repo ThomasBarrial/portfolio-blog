@@ -75,7 +75,7 @@ function ListArticles({ posts, categories }: IProps) {
           </>
         )}
       </div>
-      <div className="xl:w-3/12 flex sticky z-20 top-32 xl:top-44">
+      <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky z-20 top-28 xl:top-44">
         <div className="flex xl:flex-col items-start xl:space-x-0 space-x-1 w-full flex-wrap">
           <button
             onClick={() => {
@@ -228,9 +228,11 @@ function ListArticles({ posts, categories }: IProps) {
                     {post.description}
                   </p>
                   <div className="flex justify-between items-end text-sm">
-                    <button className="border  w-6/12 border-white px-5 py-2 mt-5">
-                      Lire l'article
-                    </button>
+                    <ClientSideRoute route={`/post/${post.slug.current}`}>
+                      <button className="border  w-full border-white px-10 py-2 mt-5">
+                        Lire l'article
+                      </button>
+                    </ClientSideRoute>
                   </div>
                 </SlideUp>
               </div>

@@ -1,11 +1,10 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import img from '../../public/images/imagebanner.webp';
 import SlideDown from '../animated/SlideDown';
 import { motion } from 'framer-motion';
 import downArrow from '../../public/icons/downarrow.svg';
-import SlideUp from '../animated/SlideUp';
 import { useScroll, useTransform, useViewportScroll } from 'framer-motion';
 
 function HomeBanner() {
@@ -14,6 +13,7 @@ function HomeBanner() {
 
   const y1 = useTransform(scrollY, [0, 700], [0, -100]);
   const y2 = useTransform(scrollY, [0, 700], [0, -200]);
+
   const fadeInVariants = {
     open: {
       opacity: 1,
@@ -70,7 +70,7 @@ function HomeBanner() {
           animate="open"
           style={{ y: y2 }}
         >
-          RAKONTO STORIES
+          RAKONTO
         </motion.div>
       </div>
 

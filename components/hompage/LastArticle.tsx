@@ -59,7 +59,7 @@ function LastArticle({ post }: { post: Post }) {
               </p>
               <div className="flex justify-between items-end text-sm">
                 <ClientSideRoute route={`/post/${post.slug.current}`}>
-                  <button className="border lg:hidden w-6/12 border-white px-5 py-2 mt-5">
+                  <button className="border lg:hidden w-full border-white px-10 py-2 mt-5">
                     Lire l'article
                   </button>
                 </ClientSideRoute>
@@ -81,7 +81,7 @@ function LastArticle({ post }: { post: Post }) {
           <SlideUp duration={2}>
             <p className="lg:mt-5 mt-2">{post.description}</p>
             <ClientSideRoute route={`/post/${post.slug.current}`}>
-              <button className="btn  px-5 py-2 w-6/12 mt-5">
+              <button className="btn  px-10 py-2 w-full mt-5">
                 Lire l'article
               </button>
             </ClientSideRoute>
@@ -109,7 +109,7 @@ function LastArticle({ post }: { post: Post }) {
       )}
 
       {isInView && (
-        <div className="lg:flex absolute h-[45rem] w-[30rem] overflow-hidden opacity-80 left-1/2 -translate-x-1/2 bg-blue-200">
+        <div className="lg:flex absolute h-[45rem] w-[30rem] overflow-hidden opacity-80 left-1/2 -translate-x-1/2">
           <motion.div
             style={{ y: y2 }}
             className="hidden relative lg:flex h-[150%] w-[100%]"

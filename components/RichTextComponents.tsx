@@ -4,12 +4,12 @@ import urlFor from '../lib/urlFor';
 
 const RichTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value, isInLine }: any) => {
       return (
-        <div className="relative w-full h-96 m-10 mx-auto">
+        <div className={'relative flex  h-96 m-10 mx-auto'}>
           <Image
-            className="object-contain"
-            src={urlFor(value).url()}
+            className="object-contain object-left"
+            src={urlFor(value).fit('crop').crop('focalpoint').quality(80).url()}
             alt="Blog Post Image"
             fill
           />
@@ -27,21 +27,21 @@ const RichTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl py-10 font-bold">{children}</h1>
+      <h1 className="text-5xl  pb-5 pt-10 font-bold">{children}</h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-4xl py-10 font-bold">{children}</h2>
+      <h2 className="text-4xl pb-5 pt-10 font-bold">{children}</h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl py-10 font-bold">{children}</h3>
+      <h3 className="text-3xl  pb-5 pt-10 font-bold">{children}</h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl py-10 font-bold">{children}</h4>
+      <h4 className="text-2xl  pb-5 pt-10 font-bold">{children}</h4>
     ),
   },
 
   blockquote: ({ children }: any) => {
-    <blockquote className="border-l-purple-800 border-l-4 pl-5 py-5 my-5">
+    <blockquote className="border-l-white border-l-4 pl-5 py-5 my-5">
       {children}
     </blockquote>;
   },

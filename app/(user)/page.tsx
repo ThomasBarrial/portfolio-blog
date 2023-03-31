@@ -3,13 +3,8 @@ import { groq } from 'next-sanity';
 import { client } from '../../lib/sanity.client';
 import PreviewSuspense from '../../components/PreviewSuspense';
 import PreviewBlogList from '../../components/PreviewBlogList';
-import BlogList from '../../components/BlogList';
 import { cache } from 'react';
-import Header from '../../components/Header';
 import HomeBanner from '../../components/hompage/HomeBanner';
-import { useScroll } from 'framer-motion';
-import HomePageComponent from '../../components/hompage/HomePageComponent';
-import GetScrollPosition from '../../components/animated/GetScrollPosition';
 import LastArticle from '../../components/hompage/LastArticle';
 import ListArticles from '../../components/hompage/ListArticles';
 
@@ -56,8 +51,6 @@ export default async function HomePage() {
 
   const posts = await clientFetch(query);
   const categories = await clientFetch(categoriesQuery);
-
-  console.log(categories);
 
   return (
     <>
