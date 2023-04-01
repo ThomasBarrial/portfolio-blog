@@ -35,12 +35,12 @@ function LastArticle({ post }: { post: Post }) {
         {isInView && (
           <>
             <SlideUp duration={2}>
-              <h3 className="font-bold lg:hidden font-poppins text-xl lg:text-3xl mt-2">
+              <h3 className="font-bold lg:hidden font-benchnine text-2xl lg:text-3xl mt-2">
                 {post.title}
               </h3>
             </SlideUp>
             <SlideUp duration={2}>
-              <p className="mt-2 lg:hidden">
+              <p className="mt-2 font-benchnine text-xl lg:hidden">
                 <span>{post.author.name}</span>.
                 <span>
                   {' '}
@@ -53,10 +53,10 @@ function LastArticle({ post }: { post: Post }) {
               </p>
             </SlideUp>
             <SlideUp duration={2}>
-              <p className=" lg:hidden font-poppins lg:mt-5 mt-1">
+              <p className=" lg:hidden font-benchnine text-xl lg:mt-5 mt-1">
                 {post.description}
               </p>
-              <div className="flex justify-between items-end text-sm">
+              <div className="flex font-benchnine text-base justify-between items-end">
                 <ClientSideRoute route={`/post/${post.slug.current}`}>
                   <button className="border btn lg:hidden w-full border-white px-10 py-2 mt-5">
                     Lire l'article
@@ -80,7 +80,7 @@ function LastArticle({ post }: { post: Post }) {
           <SlideUp duration={2}>
             <p className="lg:mt-5 mt-2">{post.description}</p>
             <ClientSideRoute route={`/post/${post.slug.current}`}>
-              <button className="btn  px-10 py-2 w-full mt-5">
+              <button className="btn  px-10 py-2 w-6/12 mt-5">
                 Lire l'article
               </button>
             </ClientSideRoute>

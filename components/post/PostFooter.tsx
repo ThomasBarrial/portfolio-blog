@@ -27,7 +27,7 @@ function PostFooter({ post, allPosts }: Props) {
   }, []);
 
   return (
-    <div className="w-full mb-10 px-5 lg:px-10 mt-20 lg:max-w-[90rem] mx-auto  uppercase font-benchnine text-2xl flex flex-col lg:flex-row lg:justify-between">
+    <div className="w-full mb-10 px-5 lg:px-10 mt-20 lg:max-w-[90rem] mx-auto  uppercase font-benchnine text-2xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
       <div className="flex space-x-2 mb-3 lg:mb-0 opacity-50">
         {post.categories.map((c) => {
           return <p>{c.title} |</p>;
@@ -35,9 +35,9 @@ function PostFooter({ post, allPosts }: Props) {
       </div>
       {nextPost && (
         <ClientSideRoute route={`/post/${nextPost.slug.current}`}>
-          <p>
+          <p className="text-xl">
             ARTICLE SUIVANT :{' '}
-            <span className="uppercase underline font-benchnine text-xl">
+            <span className="uppercase underline font-benchnine ">
               {nextPost.title}
             </span>
           </p>

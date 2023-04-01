@@ -26,7 +26,7 @@ function Header() {
       route: '',
     },
     {
-      name: 'Article simple',
+      name: 'Facebook',
       route: '',
     },
   ];
@@ -77,23 +77,28 @@ function Header() {
           </button>
           {isOpen && (
             <div className=" h-full flex flex-col justify-between">
-              <div className="font-black text-4xl space-y-10 mt-20">
-                <SlideUp duration={1}>
-                  <h3>ACCEUIL</h3>
-                </SlideUp>
-                <SlideUp duration={2}>
-                  <h3>ARTICLES</h3>
-                </SlideUp>
-                <SlideUp duration={2.5}>
-                  <h3>À PROPOS</h3>
-                </SlideUp>
-                <SlideUp duration={3}>
-                  <h3>ARTICLE SIMPLE</h3>
-                </SlideUp>
+              <div className="font-black text-6xl uppercase space-y-10 mt-20">
+                {pagesLink.map((item, index) => {
+                  return (
+                    <SlideUp
+                      key={item.name}
+                      scaleInit={0.2}
+                      scaleFinish={1}
+                      duration={2 + index * 0.2}
+                    >
+                      <Link href={item.route}>
+                        {' '}
+                        <button
+                          className="uppercase"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.name}{' '}
+                        </button>
+                      </Link>
+                    </SlideUp>
+                  );
+                })}
               </div>
-              <SlideUp duration={3}>
-                <p className="underline font-bold">Return to portfolio</p>
-              </SlideUp>
             </div>
           )}
         </div>

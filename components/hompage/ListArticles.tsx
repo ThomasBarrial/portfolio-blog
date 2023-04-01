@@ -150,12 +150,12 @@ function ListArticles({ posts, categories }: IProps) {
                         }`}
                       >
                         <SlideUp duration={1}>
-                          <h3 className="font-bold    text-xl lg:text-3xl mt-1">
+                          <h3 className="font-bold  font-benchnine text-2xl lg:text-3xl mt-1">
                             {post.title}
                           </h3>
                         </SlideUp>
                         <SlideUp duration={1}>
-                          <p className="mt-2 ">
+                          <p className="mt-2 font-benchnine text-xl">
                             <span>{post.author.name}</span>.
                             <span>
                               {' '}
@@ -171,12 +171,14 @@ function ListArticles({ posts, categories }: IProps) {
                           </p>
                         </SlideUp>
                         <SlideUp duration={1}>
-                          <p className="text-xl mt-1">{post.description}</p>
+                          <p className="text-xl font-benchnine mt-1">
+                            {post.description}
+                          </p>
                           <div className="flex justify-between items-end text-sm">
                             <ClientSideRoute
                               route={`/post/${post.slug.current}`}
                             >
-                              <button className=" w-full btn text-xl px-20 py-2 mt-5">
+                              <button className=" w-full font-benchnine btn px-20 py-2 mt-5">
                                 Lire l'article
                               </button>
                             </ClientSideRoute>
@@ -210,12 +212,12 @@ function ListArticles({ posts, categories }: IProps) {
             <div className="h-screen xl:hidden relative " key={post._id}>
               <div className="w-screen   h-3/4 flex flex-col justify-end px-5 pb-10 z-10 absolute bottom-0  bg-gradient-to-t  from-[#1B1B1B] via-[#1B1B1B]">
                 <SlideUp duration={1}>
-                  <h3 className="font-bold   text-xl xl:text-3xl mt-2">
+                  <h3 className="font-bold font-benchnine text-3xl mt-2">
                     {post.title}
                   </h3>
                 </SlideUp>
                 <SlideUp duration={1}>
-                  <p className="mt-2 ">
+                  <p className="mt-2 font-benchnine text-xl">
                     <span>{post.author.name}</span>.
                     <span>
                       {' '}
@@ -228,12 +230,12 @@ function ListArticles({ posts, categories }: IProps) {
                   </p>
                 </SlideUp>
                 <SlideUp duration={1}>
-                  <p className="  font-poppins xl:mt-5 w-full lg:w-10/12 mt-1">
+                  <p className="font-benchnine text-xl w-full mt-1">
                     {post.description}
                   </p>
                   <div className="flex justify-between items-end text-sm">
                     <ClientSideRoute route={`/post/${post.slug.current}`}>
-                      <button className="border  w-full border-white px-10 py-2 mt-5">
+                      <button className="border font-benchnine text-xl  w-full border-white px-10 py-2 mt-5">
                         Lire l'article
                       </button>
                     </ClientSideRoute>
@@ -242,7 +244,7 @@ function ListArticles({ posts, categories }: IProps) {
               </div>
 
               <Image
-                className="object-cover object-center xl:object-right flex "
+                className="object-cover object-center flex "
                 src={urlFor(post.mainImage).url()}
                 alt={post.author.name}
                 fill
