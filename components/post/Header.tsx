@@ -1,20 +1,14 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { motion, useTransform, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
 import { Post } from '../../typings';
 import SlideUp from '../animated/SlideUp';
-import ClientSideRoute from '../ClientSideRoute';
 
 function Header({ post }: { post: Post }) {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, [0, 1500], [0, -350]);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-  };
 
   return (
     <section className=" relative w-screen lg:w-full lg:px-10  lg:max-w-[90rem]  h-screen mx-auto lg:flex">
@@ -32,7 +26,7 @@ function Header({ post }: { post: Post }) {
             </h3>
           </SlideUp>
           <SlideUp duration={2}>
-            <p className="mt-2 lg:hidden">
+            <p className="mt-2 font-benchnine text-xl lg:hidden">
               <span>{post.author.name}</span>.
               <span>
                 {' '}
@@ -45,7 +39,7 @@ function Header({ post }: { post: Post }) {
             </p>
           </SlideUp>
           <SlideUp duration={2}>
-            <p className=" lg:hidden font-benchnine lg:mt-5 mt-1">
+            <p className=" lg:hidden font-benchnine text-xl lg:mt-5 mt-1">
               {post.description}
             </p>
           </SlideUp>

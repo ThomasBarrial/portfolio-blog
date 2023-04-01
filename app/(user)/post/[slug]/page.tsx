@@ -1,12 +1,10 @@
 import { groq } from 'next-sanity';
-
 import { client } from '../../../../lib/sanity.client';
-
 import { Post } from '../../../../typings';
-import { PortableText } from '@portabletext/react';
-import RichTextComponents from '../../../../components/RichTextComponents';
 import Header from '../../../../components/post/Header';
-import LastArticle from '../../../../components/hompage/LastArticle';
+import { getAllPosts, getPostSlug } from '../../../../lib/queries';
+import Gallery from '../../../../components/post/Gallery';
+import TextSection from '../../../../components/post/TextSection';
 
 type Props = {
   params: {
@@ -17,12 +15,7 @@ type Props = {
 export const revalidate = 30;
 
 export async function generateStaticParams() {
-  const query = groq`
-  *[_type == "post"] {
- slug
-  }`;
-
-  const slugs: Post[] = await client.fetch(query);
+  const slugs: Post[] = await client.fetch(getPostSlug);
   const slugRoute = slugs.map((slug) => slug.slug.current);
 
   return slugRoute.map((slug) => ({
@@ -38,19 +31,15 @@ async function OnePost({ params: { slug } }: Props) {
     categories[]->,
   }`;
 
-  const post: Post = await client.fetch(query, { slug });
+  const allPosts = await client.fetch(getAllPosts);
 
-  console.log(post.url);
+  const post: Post = await client.fetch(query, { slug });
 
   return (
     <article>
       <Header post={post} />
-
-      <div className="lg:max-w-[90rem] mx-auto px-5 lg:px-10">
-        <div className=" mx-auto w-full">
-          <PortableText value={post.body} components={RichTextComponents} />
-        </div>
-      </div>
+      <TextSection post={post} allPosts={allPosts} />
+      {post.gallery && <Gallery post={post} />}
     </article>
   );
 }

@@ -7,7 +7,6 @@ import { useRef } from 'react';
 import {
   useInView,
   motion,
-  useScroll,
   useTransform,
   useViewportScroll,
 } from 'framer-motion';
@@ -59,7 +58,7 @@ function LastArticle({ post }: { post: Post }) {
               </p>
               <div className="flex justify-between items-end text-sm">
                 <ClientSideRoute route={`/post/${post.slug.current}`}>
-                  <button className="border lg:hidden w-full border-white px-10 py-2 mt-5">
+                  <button className="border btn lg:hidden w-full border-white px-10 py-2 mt-5">
                     Lire l'article
                   </button>
                 </ClientSideRoute>

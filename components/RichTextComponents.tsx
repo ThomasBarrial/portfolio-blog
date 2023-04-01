@@ -27,16 +27,24 @@ const RichTextComponents = {
   },
   block: {
     h1: ({ children }: any) => (
-      <h1 className="text-5xl  pb-5 pt-10 font-bold">{children}</h1>
+      <h1 className="text-5xl  pb-5 pt-10 font-benchnine lg:text-4xl font-extrabold">
+        {children}
+      </h1>
     ),
     h2: ({ children }: any) => (
-      <h2 className="text-4xl pb-5 pt-10 font-bold">{children}</h2>
+      <h2 className="text-4xl pb-5 pt-10 font-benchnine lg:text-4xl font-extrabold">
+        {children}
+      </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-3xl  pb-5 pt-10 font-bold">{children}</h3>
+      <h3 className="text-3xl  pb-5 pt-10 font-benchnine lg:text-4xl font-extrabold">
+        {children}
+      </h3>
     ),
     h4: ({ children }: any) => (
-      <h4 className="text-2xl  pb-5 pt-10 font-bold">{children}</h4>
+      <h4 className="text-2xl  pb-5 pt-10 font-benchnine lg:text-4xl font-extrabold">
+        {children}
+      </h4>
     ),
   },
 
@@ -56,7 +64,8 @@ const RichTextComponents = {
         <Link
           href={value.href}
           rel={rel}
-          className="underline decoration-purple-800 hover:decoration-black"
+          target="_blank"
+          className="underline decoration-white hover:font-bold"
         >
           {children}
         </Link>

@@ -16,6 +16,7 @@ interface Post extends Base {
   slug: Slug;
   title: string;
   url: string;
+  gallery: Image[];
   description: string;
 }
 
@@ -33,7 +34,7 @@ interface Image {
 
 interface Reference {
   _ref: string;
-  _type: 'reference';
+  _type: string;
 }
 
 interface Slug {

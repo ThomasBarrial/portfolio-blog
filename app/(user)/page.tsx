@@ -7,19 +7,8 @@ import { cache } from 'react';
 import HomeBanner from '../../components/hompage/HomeBanner';
 import LastArticle from '../../components/hompage/LastArticle';
 import ListArticles from '../../components/hompage/ListArticles';
+import { getAllCategories, getAllPosts } from '../../lib/queries';
 
-const query = groq`
-*[_type == "post"] {
-    ...,
-    author->,
-    categories[]->
-} | order(_createdAt desc)
-`;
-
-const categoriesQuery = groq`
-*[_type == "category"] {
-    ...
-} | order(_createdAt desc)`;
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
@@ -41,16 +30,16 @@ export default async function HomePage() {
         }
       >
         <PreviewBlogList
-          query={query}
-          categorieQuery={categoriesQuery}
+          query={getAllPosts}
+          categorieQuery={getAllCategories}
           token={(previewData() as AppPreviewData).token}
         />
       </PreviewSuspense>
     );
   }
 
-  const posts = await clientFetch(query);
-  const categories = await clientFetch(categoriesQuery);
+  const posts = await clientFetch(getAllPosts);
+  const categories = await clientFetch(getAllCategories);
 
   return (
     <>
