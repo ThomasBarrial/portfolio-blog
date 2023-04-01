@@ -10,8 +10,6 @@ import {
 import { Category, Post } from '../../typings';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
-import category from '../../schemas/category';
-import { escape } from 'querystring';
 import ClientSideRoute from '../ClientSideRoute';
 
 interface IProps {
@@ -21,8 +19,9 @@ interface IProps {
 
 function ListArticles({ posts, categories }: IProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [isListInView, setIsListInView] = useState(true);
+  const isInView = useInView(ref, {
+    once: true,
+  });
   const [animate, setAnimate] = useState(true);
   const [categorySelected, setCategorySelected] = useState('All');
   const { scrollY } = useViewportScroll();
@@ -66,7 +65,7 @@ function ListArticles({ posts, categories }: IProps) {
           <>
             <SlideUp
               className=" px-5 bg-[#1B1B1B] flex items-end h-32 xl:h-44 pb-5 xl:px-0"
-              duration={1}
+              duration={2}
             >
               <h2 className="font-black  font-montserrat  text-3xl xl:text-8xl">
                 TOUS NOS ARTICLES
@@ -76,52 +75,58 @@ function ListArticles({ posts, categories }: IProps) {
         )}
       </div>
       <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky z-20 top-28 xl:top-44">
-        <div className="flex xl:flex-col items-start xl:space-x-0 space-x-1 w-full flex-wrap">
-          <button
-            onClick={() => {
-              setAnimate(false);
-              setTimeout(() => {
-                setAnimate(true);
-              }, 100);
-              setCategorySelected('All'), handleClick;
-            }}
-            className={`${
-              categorySelected === 'All'
-                ? 'opacity-100'
-                : 'opacity-60  transform hover:opacity-100 duration-500'
-            } font-benchnine text-xl xl:text-5xl font-bold mx-1 uppercase flex`}
-          >
-            TOUS <span className="flex xl:hidden"> / </span>
-          </button>
-          {categories.map((category) => {
-            return (
+        {isInView && (
+          <div className="flex xl:flex-col items-start xl:space-x-0 space-x-1 w-full flex-wrap">
+            <SlideUp duration={1.8}>
               <button
                 onClick={() => {
                   setAnimate(false);
                   setTimeout(() => {
                     setAnimate(true);
                   }, 100);
-                  setCategorySelected(category.title);
+                  setCategorySelected('All'), handleClick;
                 }}
-                className={`font-benchnine text-xl xl:text-5xl font-bold uppercase ${
-                  categorySelected === category.title
+                className={`${
+                  categorySelected === 'All'
                     ? 'opacity-100'
-                    : 'opacity-50  transform hover:opacity-100 duration-500'
-                }`}
-                key={category._id}
+                    : 'opacity-60  transform hover:opacity-100 duration-500'
+                } font-benchnine text-xl xl:text-5xl font-bold mx-1 uppercase flex`}
               >
-                <p>
-                  {category.title}
-                  <span className="xl:hidden"> / </span>
-                </p>
+                TOUS <span className="flex xl:hidden"> / </span>
               </button>
-            );
-          })}
-        </div>
+            </SlideUp>
+            {categories.map((category, index) => {
+              return (
+                <SlideUp key={category._id} duration={2 + index * 0.8}>
+                  <button
+                    onClick={() => {
+                      setAnimate(false);
+                      setTimeout(() => {
+                        setAnimate(true);
+                      }, 100);
+                      setCategorySelected(category.title);
+                    }}
+                    className={`font-benchnine text-xl xl:text-5xl font-bold uppercase ${
+                      categorySelected === category.title
+                        ? 'opacity-100'
+                        : 'opacity-50  transform hover:opacity-100 duration-500'
+                    }`}
+                    key={category._id}
+                  >
+                    <p>
+                      {category.title}
+                      <span className="xl:hidden"> / </span>
+                    </p>
+                  </button>
+                </SlideUp>
+              );
+            })}
+          </div>
+        )}
       </div>
       <div className="hidden xl:flex justify-end ">
         <div className="flex min-h-screen  space-x-14 flex-wrap w-9/12 -translate-y-80 ">
-          {animate && (
+          {animate && isInView && (
             <>
               {postList.map((post, index) => {
                 return (
@@ -202,9 +207,8 @@ function ListArticles({ posts, categories }: IProps) {
       {postList.map((post) => {
         return (
           <>
-            <div></div>
-            <div className="h-screen xl:hidden relative" key={post._id}>
-              <div className="w-screen  h-2/4 flex flex-col justify-end px-5 xl:px-0 pb-5 xl:pt-20 z-10 absolute bottom-0 xl:top-0 bg-gradient-to-t xl:bg-gradient-to-r from-[#1B1B1B] via-[#1B1B1B] xl:via-transparent">
+            <div className="h-screen xl:hidden relative " key={post._id}>
+              <div className="w-screen   h-3/4 flex flex-col justify-end px-5 pb-10 z-10 absolute bottom-0  bg-gradient-to-t  from-[#1B1B1B] via-[#1B1B1B]">
                 <SlideUp duration={1}>
                   <h3 className="font-bold   text-xl xl:text-3xl mt-2">
                     {post.title}

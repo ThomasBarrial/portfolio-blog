@@ -26,7 +26,7 @@ function PictureColmn({ yPosition, array }: IProps) {
             key={image.asset._ref}
             className="h-[35rem] group relative w-full overflow-hidden"
           >
-            <div className="absolute h-full transform group-hover:opacity-0 duration-1000 w-full bottom-0 left-0 opacity-30 bg-black z-10" />
+            <div className="absolute h-full transform group-hover:opacity-0 duration-1000 w-full bottom-0 left-0 opacity-20 bg-[#1B1B1B] z-10" />
             <Image
               className="object-cover object-center group-hover:scale-110 duration-1000"
               src={urlFor(image).url()}

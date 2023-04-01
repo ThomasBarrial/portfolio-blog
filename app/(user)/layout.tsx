@@ -1,7 +1,7 @@
 import Header from '../../components/Header';
 import '../../styles/globals.css';
 
-import { Montserrat, Poppins, BenchNine, Bebas_Neue } from 'next/font/google';
+import { Montserrat, BenchNine } from 'next/font/google';
 
 export const metadata = {
   title: 'Next.js',
@@ -13,17 +13,6 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
-const bebasNeue = Bebas_Neue({
-  weight: ['400'],
-  subsets: ['latin'],
-  variable: '--font-bebasNeue',
-});
-
-const poppins = Poppins({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-});
 const benchnine = BenchNine({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
@@ -38,7 +27,7 @@ export default function RootLayout({
   return (
     <html className="w-screen overflow-x-hidden" lang="en">
       <body
-        className={`bg-[#1B1B1B]  text-white w-screen   ${montserrat.variable} ${poppins.variable} ${benchnine.variable} ${bebasNeue.variable}`}
+        className={`bg-[#1B1B1B]  text-white w-screen   ${montserrat.variable} ${benchnine.variable} `}
       >
         <Header />
         {children}

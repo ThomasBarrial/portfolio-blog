@@ -35,8 +35,8 @@ function StickyNavComponent({ post, allPost }: IProps) {
   }, []);
 
   return (
-    <div className=" hidden  lg:flex flex-col border-l  border-white px-10 w-5/12 h-full font-benchnine text-2xl sticky top-16">
-      <div>
+    <div className=" hidden  lg:flex flex-col border-l  border-white  w-5/12 h-full font-benchnine text-2xl sticky top-16">
+      <div className="px-10">
         <SlideUp duration={2} scaleInit={0.8} scaleFinish={1}>
           <h3 className="uppercase text-4xl">A PROPOS DE CETTE ARTICLE</h3>
         </SlideUp>
@@ -71,13 +71,13 @@ function StickyNavComponent({ post, allPost }: IProps) {
 
       <div className="mt-12">
         <SlideUp duration={2} scaleInit={0.8} scaleFinish={1}>
-          <h3 className="uppercase text-4xl">Sur le même sujet</h3>
+          <h3 className="uppercase text-4xl px-10">Sur le même sujet</h3>
         </SlideUp>
-        <div className="space-y-5 mt-3 flex flex-col">
+        <div className="space-y-5 mt-3 flex flex-col px-5">
           {postList.slice(0, 3).map((p) => {
             return (
-              <SlideUp duration={2} scaleInit={0.8} scaleFinish={1}>
-                <div className="transform hover:scale-105 duration-300">
+              <SlideUp key={p._id} duration={2} scaleInit={0.8} scaleFinish={1}>
+                <div className="transform hover:scale-105 px-5  duration-300">
                   <ClientSideRoute route={`/post/${p.slug.current}`}>
                     <h4>{p.title}</h4>
                     <div className="flex text-lg opacity-70">
@@ -107,5 +107,3 @@ function StickyNavComponent({ post, allPost }: IProps) {
 }
 
 export default StickyNavComponent;
-
-// const array1 = {"Alternative"}

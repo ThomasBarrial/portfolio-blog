@@ -44,7 +44,6 @@ export default async function HomePage() {
   return (
     <>
       <HomeBanner />
-      {/* <GetScrollPosition /> */}
       <LastArticle post={posts[0]} />
       <ListArticles posts={posts} categories={categories} />
     </>

@@ -1,10 +1,10 @@
-import { groq } from 'next-sanity';
 import { client } from '../../../../lib/sanity.client';
 import { Post } from '../../../../typings';
 import Header from '../../../../components/post/Header';
-import { getAllPosts, getPostSlug } from '../../../../lib/queries';
+import { getAllPosts, getPost, getPostSlug } from '../../../../lib/queries';
 import Gallery from '../../../../components/post/Gallery';
 import TextSection from '../../../../components/post/TextSection';
+import PostFooter from '../../../../components/post/PostFooter';
 
 type Props = {
   params: {
@@ -24,22 +24,15 @@ export async function generateStaticParams() {
 }
 
 async function OnePost({ params: { slug } }: Props) {
-  const query = groq`
-  *[_type == "post" && slug.current == $slug][0] {
-    ...,
-    author->,
-    categories[]->,
-  }`;
-
   const allPosts = await client.fetch(getAllPosts);
-
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(getPost, { slug });
 
   return (
     <article>
       <Header post={post} />
       <TextSection post={post} allPosts={allPosts} />
       {post.gallery && <Gallery post={post} />}
+      <PostFooter post={post} allPosts={allPosts} />
     </article>
   );
 }

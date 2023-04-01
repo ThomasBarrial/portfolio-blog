@@ -8,8 +8,7 @@ import downArrow from '../../public/icons/downarrow.svg';
 import { useScroll, useTransform, useViewportScroll } from 'framer-motion';
 
 function HomeBanner() {
-  const { scrollYProgress } = useScroll();
-  const { scrollY } = useViewportScroll();
+  const { scrollY, scrollYProgress } = useViewportScroll();
 
   const y1 = useTransform(scrollY, [0, 700], [0, -100]);
   const y2 = useTransform(scrollY, [0, 700], [0, -200]);
@@ -40,7 +39,6 @@ function HomeBanner() {
 
   return (
     <div className="h-screen max-w-[90rem] mx-auto">
-      {/* <motion.div className="h-10 w-full absolute z-20 top-72 bg-red-400" /> */}
       <div
         className={`flex items-center justify-center overflow-hidden w-full  lg:w-8/12 mx-auto  h-[50%] lg:mt-24`}
       >
