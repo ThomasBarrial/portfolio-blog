@@ -65,7 +65,7 @@ function HomeBanner() {
         </motion.div>
       </div>
 
-      <div className="font-montserrat overflow-hidden h-96 flex items-end justify-center z-10  text-6xl md:text-9xl  w-full mx-auto font-black -translate-y-80 lg:-translate-y- text-center">
+      <div className="font-montserrat overflow-hidden h-96 flex items-end justify-center z-10  text-6xl md:text-9xl  w-full mx-auto font-black lg:-translate-y-80 -translate-y-[22rem] text-center">
         <motion.div variants={variants} initial="closed" animate="open">
           RAKONTO
         </motion.div>
