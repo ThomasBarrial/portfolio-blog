@@ -30,7 +30,7 @@ function PostFooter({ post, allPosts }: Props) {
     <div className="w-full mb-10 px-5 lg:px-10 mt-20 lg:max-w-[90rem] mx-auto  uppercase font-benchnine text-2xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
       <div className="flex space-x-2 mb-3 lg:mb-0 opacity-50">
         {post.categories.map((c) => {
-          return <p>{c.title} |</p>;
+          return <p key={c._id}>{c.title} |</p>;
         })}
       </div>
       {nextPost && (
