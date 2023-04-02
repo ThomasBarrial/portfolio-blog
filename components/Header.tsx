@@ -68,7 +68,7 @@ function Header() {
 
         {/* MOBILE COMPONENTS */}
         <div
-          className={`fixed bg-[#2F2E2E] lg:hidden z-20  px-8 py-10 h-screen w-screen top-0 transition-transform  left-0 ${
+          className={`fixed bg-[#1B1B1B] lg:hidden z-20  px-8 py-10 h-screen w-screen top-0 transition-transform  left-0 ${
             isOpen ? 'translate-x-0 bg-opacity-100' : 'translate-x-full'
           } duration-700 ease-in-out`}
         >

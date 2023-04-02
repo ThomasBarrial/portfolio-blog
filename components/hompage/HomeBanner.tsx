@@ -44,7 +44,7 @@ function HomeBanner() {
       >
         <motion.div
           animate={{
-            y: ['80%', '80%', '0%'],
+            y: ['50%', '50%', '0%'],
             width: ['0%', '100%', '100%'],
           }}
           style={{ y: y2 }}
@@ -95,7 +95,7 @@ function HomeBanner() {
         variants={fadeInVariants}
         animate="open"
         initial="closed"
-        className="group absolute border border-white px-5 py-8 rounded-full bottom-[5%] lg:bottom-[10%] left-1/2"
+        className="group absolute border  border-white lg:px-5 lg:py-8 py-4 px-3 rounded-full bottom-[5%] lg:bottom-[10%] left-1/2 -translate-x-1/2"
       >
         <SlideDown duration={3}>
           <Image src={downArrow} alt="down" />

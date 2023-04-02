@@ -69,7 +69,7 @@ function ListArticles({ posts, categories }: IProps) {
           </>
         )}
       </div>
-      <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky z-10 top-28 xl:top-44">
+      <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky xl:z-10 z-20 top-32 xl:top-44">
         {isInView && (
           <div className="flex xl:flex-col items-start xl:space-x-0 space-x-1 w-full flex-wrap">
             <SlideUp duration={1.8}>
@@ -92,7 +92,7 @@ function ListArticles({ posts, categories }: IProps) {
             </SlideUp>
             {categories.map((category, index) => {
               return (
-                <SlideUp key={category._id} duration={2 + index * 0.8}>
+                <SlideUp key={category._id} duration={1 + index * 0.8}>
                   <button
                     onClick={() => {
                       setAnimate(false);

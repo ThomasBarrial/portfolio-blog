@@ -107,7 +107,7 @@ function LastArticle({ post }: { post: Post }) {
       )}
 
       {isInView && (
-        <div className="lg:flex absolute h-[45rem] w-[30rem] overflow-hidden opacity-80 left-1/2 -translate-x-1/2">
+        <div className="lg:flex hidden absolute h-[45rem] w-[30rem] overflow-hidden opacity-80 left-1/2 -translate-x-1/2">
           <motion.div
             style={{ y: y2 }}
             className="hidden relative lg:flex h-[150%] w-[100%]"
