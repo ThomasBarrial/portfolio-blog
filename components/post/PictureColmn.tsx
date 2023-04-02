@@ -32,6 +32,7 @@ function PictureColmn({ yPosition, array }: IProps) {
               src={urlFor(image).url()}
               alt=""
               fill
+              loading="lazy"
             />
           </div>
         );

@@ -83,6 +83,7 @@ function Header({ post }: { post: Post }) {
             src={urlFor(post.mainImage).url()}
             alt={post.author.name}
             fill
+            loading="lazy"
           />
         </motion.div>
       </div>

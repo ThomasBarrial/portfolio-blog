@@ -5,10 +5,10 @@ import img from '../../public/images/imagebanner.webp';
 import SlideDown from '../animated/SlideDown';
 import { motion } from 'framer-motion';
 import downArrow from '../../public/icons/downarrow.svg';
-import { useScroll, useTransform, useViewportScroll } from 'framer-motion';
+import { useTransform, useScroll } from 'framer-motion';
 
 function HomeBanner() {
-  const { scrollY, scrollYProgress } = useViewportScroll();
+  const { scrollY, scrollYProgress } = useScroll();
 
   const y1 = useTransform(scrollY, [0, 700], [0, -100]);
   const y2 = useTransform(scrollY, [0, 700], [0, -200]);
@@ -52,6 +52,7 @@ function HomeBanner() {
           className="h-[180%]  relative"
         >
           <Image
+            loading="lazy"
             src={img}
             className={`object-cover object-center transform`}
             style={{ scale: `${scrollYProgress.get() + 1}` }}

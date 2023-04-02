@@ -1,11 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import {
-  useInView,
-  useViewportScroll,
-  useTransform,
-  motion,
-} from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { ImageGallery } from '../../typings';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
@@ -16,9 +11,6 @@ interface Props {
 
 function GallerySection({ galleryPictures }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-  });
   return (
     <div className="h-screen relative flex flex-col justify-center w-full max-w-[90rem] mx-auto bg-red-200 font-benchnine">
       <div className="w-8/12">
@@ -47,6 +39,7 @@ function GallerySection({ galleryPictures }: Props) {
                   alt=""
                   src={urlFor(img.image).url()}
                   fill
+                  loading="lazy"
                 />
               </div>
             );

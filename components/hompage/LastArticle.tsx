@@ -4,19 +4,14 @@ import { Post } from '../../typings';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
 import { useRef } from 'react';
-import {
-  useInView,
-  motion,
-  useTransform,
-  useViewportScroll,
-} from 'framer-motion';
+import { useInView, motion, useTransform, useScroll } from 'framer-motion';
 import SlideUp from '../animated/SlideUp';
 import ClientSideRoute from '../ClientSideRoute';
 
 function LastArticle({ post }: { post: Post }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const y2 = useTransform(scrollY, [0, 1500], [0, -350]);
 
   return (
@@ -73,6 +68,7 @@ function LastArticle({ post }: { post: Post }) {
         src={urlFor(post.mainImage).url()}
         alt={post.author.name}
         fill
+        loading="lazy"
       />
 
       {isInView && (
@@ -118,6 +114,7 @@ function LastArticle({ post }: { post: Post }) {
               src={urlFor(post.mainImage).url()}
               alt={post.author.name}
               fill
+              loading="lazy"
             />
           </motion.div>
         </div>

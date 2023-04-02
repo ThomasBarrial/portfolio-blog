@@ -1,12 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import SlideUp from '../animated/SlideUp';
-import {
-  useInView,
-  useViewportScroll,
-  useTransform,
-  motion,
-} from 'framer-motion';
+import { useInView, useScroll, useTransform, motion } from 'framer-motion';
 import { Category, Post } from '../../typings';
 import Image from 'next/image';
 import urlFor from '../../lib/urlFor';
@@ -24,7 +19,7 @@ function ListArticles({ posts, categories }: IProps) {
   });
   const [animate, setAnimate] = useState(true);
   const [categorySelected, setCategorySelected] = useState('All');
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const [postList, setPostList] = useState(posts);
 
   const y2 = useTransform(scrollY, [200, 16000], [0, -1500]);
@@ -130,7 +125,7 @@ function ListArticles({ posts, categories }: IProps) {
             <>
               {postList.map((post, index) => {
                 return (
-                  <SlideUp duration={1}>
+                  <SlideUp key={post._id} duration={1}>
                     <div
                       className={`w-[26rem] font-benchnine relative overflow-hidden mt-28 ${
                         index % 2 !== 0
@@ -195,6 +190,7 @@ function ListArticles({ posts, categories }: IProps) {
                           src={urlFor(post.mainImage).url()}
                           alt={post.author.name}
                           fill
+                          loading="lazy"
                         />
                       </motion.div>
                     </div>
@@ -208,7 +204,7 @@ function ListArticles({ posts, categories }: IProps) {
 
       {postList.map((post) => {
         return (
-          <>
+          <div key={post._id}>
             <div className="h-screen xl:hidden relative " key={post._id}>
               <div className="w-screen   h-3/4 flex flex-col justify-end px-5 pb-10 z-10 absolute bottom-0  bg-gradient-to-t  from-[#1B1B1B] via-[#1B1B1B]">
                 <SlideUp duration={1}>
@@ -248,9 +244,10 @@ function ListArticles({ posts, categories }: IProps) {
                 src={urlFor(post.mainImage).url()}
                 alt={post.author.name}
                 fill
+                loading="lazy"
               />
             </div>
-          </>
+          </div>
         );
       })}
 
