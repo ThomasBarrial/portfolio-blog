@@ -14,17 +14,12 @@ function Header({ post }: { post: Post }) {
     <section className=" relative w-screen lg:w-full lg:px-10  lg:max-w-[90rem]  h-screen mx-auto lg:flex">
       <div className=" w-screen px-5 lg:px-0 pb-5 lg:pt-20 z-10 absolute bottom-0 lg:top-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#1B1B1B] via-[#1B1B1B] lg:via-transparent ">
         <SlideUp duration={2}>
-          <h2 className="font-black uppercase max-w-2xl lg:w-1/2  font-montserrat text-3xl lg:text-7xl">
+          <h2 className="font-black  uppercase max-w-2xl lg:w-1/2  font-montserrat text-3xl lg:text-7xl">
             {post.title}
           </h2>
         </SlideUp>
 
         <>
-          <SlideUp duration={2}>
-            <h3 className="font-bold lg:hidden font-benchnine text-xl lg:text-3xl mt-2">
-              {post.title}
-            </h3>
-          </SlideUp>
           <SlideUp duration={2}>
             <p className="mt-2 font-benchnine text-xl lg:hidden">
               <span>{post.author.name}</span>.
