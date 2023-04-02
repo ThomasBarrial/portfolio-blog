@@ -26,7 +26,7 @@ function TextSection({ post, allPosts }: Props) {
         className=" mx-auto w-full lg:w-10/12 font-benchnine px-5 text-xl lg:text-2xl lg:px-10"
       >
         {isInView && (
-          <SlideUp duration={2} scaleInit={0.8} scaleFinish={1}>
+          <SlideUp duration={2}>
             <PortableText value={post.body} components={RichTextComponents} />
           </SlideUp>
         )}

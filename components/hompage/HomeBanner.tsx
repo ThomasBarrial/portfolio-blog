@@ -40,16 +40,16 @@ function HomeBanner() {
   return (
     <div className="h-screen max-w-[90rem] mx-auto">
       <div
-        className={`flex items-center justify-center overflow-hidden w-full  lg:w-8/12 mx-auto  h-[50%] lg:mt-24`}
+        className={`flex items-center justify-center  w-full  lg:w-8/12 mx-auto overflow-hidden  h-[50%] lg:mt-24`}
       >
         <motion.div
           animate={{
-            y: ['400%', '400%', '0%'],
+            y: ['80%', '80%', '0%'],
             width: ['0%', '100%', '100%'],
           }}
-          style={{ y: y1 }}
+          style={{ y: y2 }}
           transition={{ type: 'spring', duration: 2.5, bounce: 0 }}
-          className="h-full  relative"
+          className="h-[180%]  relative"
         >
           <Image
             src={img}
@@ -62,12 +62,7 @@ function HomeBanner() {
       </div>
 
       <div className="font-montserrat overflow-hidden h-96 flex items-end justify-center z-10  text-6xl md:text-9xl  w-full mx-auto font-black -translate-y-80 lg:-translate-y- text-center">
-        <motion.div
-          variants={variants}
-          initial="closed"
-          animate="open"
-          style={{ y: y2 }}
-        >
+        <motion.div variants={variants} initial="closed" animate="open">
           RAKONTO
         </motion.div>
       </div>
@@ -78,7 +73,6 @@ function HomeBanner() {
           variants={variants}
           initial="closed"
           animate="open"
-          style={{ y: y1 }}
         >
           <p className="uppercase">Rakonto agit pour l'éducation des jeunes</p>
         </motion.div>
@@ -87,7 +81,6 @@ function HomeBanner() {
           variants={variants}
           initial="closed"
           animate="open"
-          style={{ y: y1 }}
         >
           <p className="uppercase">
             Nous proposons des projets Erasmus+ AC1 et AC2.
@@ -98,7 +91,6 @@ function HomeBanner() {
         variants={fadeInVariants}
         animate="open"
         initial="closed"
-        style={{ y: y2, x: '-50%' }}
         className="group absolute border border-white px-5 py-8 rounded-full bottom-[5%] lg:bottom-[10%] left-1/2"
       >
         <SlideDown duration={3}>

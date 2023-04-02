@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-export const revalidate = 30;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const slugs: Post[] = await client.fetch(getPostSlug);

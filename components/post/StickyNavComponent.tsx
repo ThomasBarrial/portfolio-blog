@@ -49,7 +49,7 @@ function StickyNavComponent({ post, allPost }: IProps) {
               {post.author.name} /
               <span>
                 {' '}
-                {new Date(post._createdAt).toLocaleDateString('fr-FR', {
+                {new Date(post.publishedAt).toLocaleDateString('fr-FR', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
@@ -85,11 +85,14 @@ function StickyNavComponent({ post, allPost }: IProps) {
                       <p>{post.author.name} . </p>
                       <p>
                         {' '}
-                        {new Date(post._createdAt).toLocaleDateString('fr-FR', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
+                        {new Date(post.publishedAt).toLocaleDateString(
+                          'fr-FR',
+                          {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                          }
+                        )}
                       </p>
                     </div>
                     <button className="underline flex items-end w-full mt-2 text-lg">

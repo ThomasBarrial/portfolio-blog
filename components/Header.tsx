@@ -19,15 +19,15 @@ function Header() {
     },
     {
       name: 'Youtube',
-      route: '',
+      route: 'https://www.youtube.com/channel/UCRDYUwd5BPa860_en7u4WkQ',
     },
     {
       name: 'Instagram',
-      route: '',
+      route: 'https://www.instagram.com/rakonto_ngo/',
     },
     {
       name: 'Facebook',
-      route: '',
+      route: 'https://www.facebook.com/rakontoassociation',
     },
   ];
 
@@ -54,7 +54,10 @@ function Header() {
                 duration={2}
                 className="group"
               >
-                <Link href={item.route}>
+                <Link
+                  href={item.route}
+                  target={item.name !== 'Acceuil' ? '_blank ' : ''}
+                >
                   {item.name}
                   <hr className="h-1 transform  group-hover:translate-x-0 -translate-x-[105%] duration-300" />
                 </Link>

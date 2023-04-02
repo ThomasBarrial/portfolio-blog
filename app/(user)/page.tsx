@@ -7,12 +7,17 @@ import { cache } from 'react';
 import HomeBanner from '../../components/hompage/HomeBanner';
 import LastArticle from '../../components/hompage/LastArticle';
 import ListArticles from '../../components/hompage/ListArticles';
-import { getAllCategories, getAllPosts } from '../../lib/queries';
+import {
+  getAllCategories,
+  getAllPosts,
+  homeGalleryPictures,
+} from '../../lib/queries';
+import Footer from '../../components/hompage/Footer';
 
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
-export const revalidate = 30;
+export const revalidate = 60;
 
 type AppPreviewData = { token: string };
 
@@ -23,7 +28,7 @@ export default async function HomePage() {
         fallback={
           <div role="status">
             {/* CREATE A LOADER */}
-            <p className="text-center text-lg animate-pulse text-purple-800">
+            <p className="text-center text-lg animate-pulse">
               Loading Preview data....
             </p>
           </div>
@@ -40,12 +45,15 @@ export default async function HomePage() {
 
   const posts = await clientFetch(getAllPosts);
   const categories = await clientFetch(getAllCategories);
+  const galleryPictures = await clientFetch(homeGalleryPictures);
 
   return (
     <>
       <HomeBanner />
       <LastArticle post={posts[0]} />
       <ListArticles posts={posts} categories={categories} />
+      {/* <GallerySection galleryPictures={galleryPictures} /> */}
+      <Footer />
     </>
   );
 }

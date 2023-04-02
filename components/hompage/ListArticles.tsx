@@ -74,7 +74,7 @@ function ListArticles({ posts, categories }: IProps) {
           </>
         )}
       </div>
-      <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky z-20 top-28 xl:top-44">
+      <div className="xl:w-3/12 px-5 xl:px-0 bg-[#1B1B1B] flex sticky z-10 top-28 xl:top-44">
         {isInView && (
           <div className="flex xl:flex-col items-start xl:space-x-0 space-x-1 w-full flex-wrap">
             <SlideUp duration={1.8}>
@@ -159,7 +159,7 @@ function ListArticles({ posts, categories }: IProps) {
                             <span>{post.author.name}</span>.
                             <span>
                               {' '}
-                              {new Date(post._createdAt).toLocaleDateString(
+                              {new Date(post.publishedAt).toLocaleDateString(
                                 'fr-FR',
                                 {
                                   day: 'numeric',
@@ -221,7 +221,7 @@ function ListArticles({ posts, categories }: IProps) {
                     <span>{post.author.name}</span>.
                     <span>
                       {' '}
-                      {new Date(post._createdAt).toLocaleDateString('fr-FR', {
+                      {new Date(post.publishedAt).toLocaleDateString('fr-FR', {
                         day: 'numeric',
                         month: 'long',
                         year: 'numeric',

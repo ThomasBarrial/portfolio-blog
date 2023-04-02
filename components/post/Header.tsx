@@ -30,7 +30,7 @@ function Header({ post }: { post: Post }) {
               <span>{post.author.name}</span>.
               <span>
                 {' '}
-                {new Date(post._createdAt).toLocaleDateString('fr-FR', {
+                {new Date(post.publishedAt).toLocaleDateString('fr-FR', {
                   day: 'numeric',
                   month: 'long',
                   year: 'numeric',
@@ -60,7 +60,7 @@ function Header({ post }: { post: Post }) {
           <p>{post.author.name} . </p>
           <p>
             {' '}
-            {new Date(post._createdAt).toLocaleDateString('fr-FR', {
+            {new Date(post.publishedAt).toLocaleDateString('fr-FR', {
               day: 'numeric',
               month: 'long',
               year: 'numeric',

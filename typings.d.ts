@@ -8,6 +8,12 @@ type Base = {
   _updatedAt: string;
 };
 
+interface ImageGallery extends Base {
+  author: Author;
+  image: Image;
+  title: string;
+}
+
 interface Post extends Base {
   author: Author;
   body: Block[];
@@ -18,6 +24,7 @@ interface Post extends Base {
   url: string;
   gallery: Image[];
   description: string;
+  publishedAt: string;
 }
 
 interface Author extends Base {

@@ -5,7 +5,7 @@ export const getAllPosts = groq`
     ...,
     author->,
     categories[]->
-} | order(_createdAt desc)
+} | order(publishedAt desc)
 `;
 
 export const getAllCategories = groq`
@@ -23,4 +23,8 @@ export const getPost = groq`
   ...,
   author->,
   categories[]->,
+}`;
+
+export const homeGalleryPictures = groq`*[_type == "homeGalleryPictures"] {
+  ...,
 }`;
