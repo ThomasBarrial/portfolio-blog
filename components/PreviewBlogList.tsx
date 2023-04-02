@@ -13,8 +13,6 @@ export default function PreviewBlogList({
   token,
   categorieQuery,
 }: Props) {
-  console.log(query);
-
   const posts = usePreview(token, query);
   const categories = usePreview(token, categorieQuery);
 

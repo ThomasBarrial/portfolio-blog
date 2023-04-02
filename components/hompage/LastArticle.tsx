@@ -67,6 +67,9 @@ function LastArticle({ post }: { post: Post }) {
         className="object-cover object-center lg:object-right flex lg:hidden"
         src={urlFor(post.mainImage).url()}
         alt={post.author.name}
+        sizes="(max-width: 768px) 100vw,
+        (max-width: 1200px) 50vw,
+        33vw"
         fill
         loading="lazy"
       />

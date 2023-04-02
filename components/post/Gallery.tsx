@@ -28,7 +28,6 @@ function Gallery({ post }: { post: Post }) {
       {/* MOBILE COMPONENT */}
       <div className="lg:hidden flex flex-col">
         {post.gallery.map((img) => {
-          console.log(urlFor(img).url());
           return (
             <div
               key={img.asset._ref}
@@ -40,6 +39,9 @@ function Gallery({ post }: { post: Post }) {
                 alt=""
                 fill
                 loading="lazy"
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
               />
             </div>
           );

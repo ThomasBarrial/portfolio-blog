@@ -22,7 +22,7 @@ function ListArticles({ posts, categories }: IProps) {
   const { scrollY } = useScroll();
   const [postList, setPostList] = useState(posts);
 
-  const y2 = useTransform(scrollY, [200, 16000], [0, -1500]);
+  const y2 = useTransform(scrollY, [200, 20000], [0, -1500]);
 
   useEffect(() => {
     if (categorySelected === 'All') {
@@ -190,6 +190,9 @@ function ListArticles({ posts, categories }: IProps) {
                           src={urlFor(post.mainImage).url()}
                           alt={post.author.name}
                           fill
+                          sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          33vw"
                           loading="lazy"
                         />
                       </motion.div>
@@ -244,6 +247,9 @@ function ListArticles({ posts, categories }: IProps) {
                 src={urlFor(post.mainImage).url()}
                 alt={post.author.name}
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
                 loading="lazy"
               />
             </div>

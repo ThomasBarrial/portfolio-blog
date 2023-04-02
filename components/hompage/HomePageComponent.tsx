@@ -22,11 +22,8 @@ function HomePageComponent({ posts }: Props) {
     restDelta: 0.001,
   });
 
-  useEffect(() => {
-    console.log('hello');
-  }, [scrollYProgress]);
+  useEffect(() => {}, [scrollYProgress]);
 
-  console.log(scrollX, scrollYProgress);
   return (
     <div className="h-screen w-screen bg-blue-200 pt-20">
       <motion.div className="h-10 w-full bg-red-400" style={{ scaleX }} />
