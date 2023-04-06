@@ -126,77 +126,68 @@ function ListArticles({ posts, categories }: IProps) {
               {postList.map((post, index) => {
                 return (
                   <SlideUp key={post._id} duration={1}>
-                    <div
-                      className={`w-[26rem] font-benchnine relative overflow-hidden mt-28 ${
-                        index % 2 !== 0
-                          ? `translate-y-14 ${
-                              postList.length <= 2 ? 'h-[35rem]' : 'h-[40rem]'
-                            }`
-                          : 'h-[35rem]'
-                      }`}
-                    >
+                    <ClientSideRoute route={`/post/${post.slug.current}`}>
                       <div
-                        className={`absolute p-5 w-full z-20 bg-gradient-to-t bg-opacity-50 from-[#1b1b1bcd] via-[#1b1b1ba9]  ${
+                        className={`w-[26rem] group font-benchnine relative overflow-hidden mt-28 ${
                           index % 2 !== 0
-                            ? ` ${
-                                postList.length <= 2 ? 'bottom-0' : 'bottom-14'
+                            ? `translate-y-14 ${
+                                postList.length <= 2 ? 'h-[35rem]' : 'h-[40rem]'
                               }`
-                            : 'bottom-0'
+                            : 'h-[35rem]'
                         }`}
                       >
-                        <SlideUp duration={1}>
-                          <h3 className="font-bold  font-benchnine text-2xl lg:text-3xl mt-1">
-                            {post.title}
-                          </h3>
-                        </SlideUp>
-                        <SlideUp duration={1}>
-                          <p className="mt-2 font-benchnine text-xl">
-                            <span>{post.author.name}</span>.
-                            <span>
-                              {' '}
-                              {new Date(post.publishedAt).toLocaleDateString(
-                                'fr-FR',
-                                {
-                                  day: 'numeric',
-                                  month: 'long',
-                                  year: 'numeric',
-                                }
-                              )}
-                            </span>
-                          </p>
-                        </SlideUp>
-                        <SlideUp duration={1}>
-                          <p className="text-xl font-benchnine mt-1">
-                            {post.description}
-                          </p>
-                          <div className="flex justify-between items-end text-sm">
-                            <ClientSideRoute
-                              route={`/post/${post.slug.current}`}
-                            >
-                              <button className=" w-full font-benchnine btn px-20 py-2 mt-5">
-                                Lire l'article
-                              </button>
-                            </ClientSideRoute>
-                          </div>
-                        </SlideUp>
-                      </div>
+                        <div
+                          className={`absolute p-5 w-full z-20 bg-gradient-to-t bg-opacity-50 from-[#1b1b1bcd] via-[#1b1b1ba9]  ${
+                            index % 2 !== 0
+                              ? ` ${
+                                  postList.length <= 2
+                                    ? 'bottom-0'
+                                    : 'bottom-14'
+                                }`
+                              : 'bottom-0'
+                          }`}
+                        >
+                          <SlideUp duration={1}>
+                            <h3 className="font-bold  font-benchnine text-2xl lg:text-3xl mt-1">
+                              {post.title}
+                            </h3>
+                          </SlideUp>
+                          <SlideUp duration={1}>
+                            <p className="mt-2 font-benchnine text-xl">
+                              <span>{post.author.name}</span>.
+                              <span>
+                                {' '}
+                                {new Date(post.publishedAt).toLocaleDateString(
+                                  'fr-FR',
+                                  {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric',
+                                  }
+                                )}
+                              </span>
+                            </p>
+                          </SlideUp>
+                          <SlideUp duration={1}></SlideUp>
+                        </div>
 
-                      <motion.div
-                        style={{ y: y2 }}
-                        className="h-[150%] translate-y-96 z-10 relative w-[100%] "
-                      >
-                        <Image
-                          className="object-cover object-center flex"
-                          src={urlFor(post.mainImage).url()}
-                          alt={post.author.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw,
+                        <motion.div
+                          style={{ y: y2 }}
+                          className="h-[150%] translate-y-96 z-10 relative w-[100%] "
+                        >
+                          <Image
+                            className="object-cover transform group-hover:scale-110 duration-500 object-center flex"
+                            src={urlFor(post.mainImage).url()}
+                            alt={post.author.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw,
                           (max-width: 1200px) 50vw,
                           33vw"
-                          loading="lazy"
-                        />
-                      </motion.div>
-                    </div>
+                            loading="lazy"
+                          />
+                        </motion.div>
+                      </div>
+                    </ClientSideRoute>
                   </SlideUp>
                 );
               })}
