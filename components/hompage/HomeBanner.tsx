@@ -16,11 +16,11 @@ function HomeBanner() {
   const fadeInVariants = {
     open: {
       opacity: 1,
-      transition: { type: 'spring', duration: 3.5, bounce: 0, delay: 1 },
+      transition: { duration: 3.5, bounce: 0, delay: 1 },
     },
     closed: {
       opacity: 0,
-      transition: { type: 'spring', duration: 3.5, bounce: 0, delay: 1 },
+      transition: { duration: 3.5, bounce: 0, delay: 1 },
     },
   };
 
@@ -28,12 +28,12 @@ function HomeBanner() {
     open: {
       y: 0,
       scale: 1,
-      transition: { type: 'spring', duration: 2, bounce: 0, delay: 1 },
+      transition: { duration: 2, bounce: 0, delay: 1 },
     },
     closed: {
       y: '300px',
       scale: 0.8,
-      transition: { type: 'spring', duration: 2, bounce: 0, delay: 1 },
+      transition: { duration: 2, bounce: 0, delay: 1 },
     },
   };
 
@@ -48,7 +48,7 @@ function HomeBanner() {
             width: ['0%', '100%', '100%'],
           }}
           style={{ y: y2 }}
-          transition={{ type: 'spring', duration: 2.5, bounce: 0 }}
+          transition={{ duration: 2.5 }}
           className="h-[180%]  relative"
         >
           <Image

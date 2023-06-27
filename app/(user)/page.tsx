@@ -13,6 +13,7 @@ import {
   homeGalleryPictures,
 } from '../../lib/queries';
 import Footer from '../../components/hompage/Footer';
+import GallerySection from '../../components/hompage/GallerySection';
 
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));

@@ -24,12 +24,12 @@ function SlideUp({
     open: {
       y: 0,
       scale: scaleFinish,
-      transition: { type: 'spring', duration, bounce: 0, delay },
+      transition: { duration, bounce: 0, delay },
     },
     closed: {
       y: '300px',
       scale: scaleInit,
-      transition: { type: 'spring', duration, bounce: 0, delay },
+      transition: { duration, bounce: 0, delay },
     },
   };
   return (
